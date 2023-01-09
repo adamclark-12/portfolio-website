@@ -8,7 +8,7 @@ export const Home = () => {
       </h1>
 
       <p className="section__subtitle section__subtitle--intro">
-        front-end dev
+        <strong>front-end dev</strong>
       </p>
     </section>
   );

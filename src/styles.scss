@@ -1,2 +1,128 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* custom properties */
+
+/* font faces */
+
+@font-face {
+  font-family: "SourceCodePro";
+  src: url(./fonts/SourceCodePro-Black.ttf);
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SourceCodePro";
+  src: url(./fonts/SourceCodePro-Light.ttf);
+  font-weight: 300;
+  font-style: normal;
+}
+
+/* font family */
+$ff-primary: "SourceCodePro";
+
+/* font weights */
+$fw-reg: 300;
+$fw-bold: 900;
+
+/* colours */
+$clr-light: whitesmoke;
+$clr-dark: #303030;
+$clr-accent: #09702b48;
+
+/* font sizes */
+
+$fs-h1: 3rem;
+$fs-h2: 2.25rem;
+$fs-h3: 1.25rem;
+$fs-body: 1rem;
+
+/* media font sizes */
+
+$m-fs-h1: 4.5rem;
+$m-fs-h2: 3.75rem;
+$m-fs-h3: 1.5rem;
+$m-fs-body: 1.125rem;
+
+/*  */
+
+/* general styles */
+
 body {
+  background-color: $clr-light;
+  color: $clr-dark;
+  margin: 0;
+  font-family: $ff-primary;
+  font-weight: $fw-reg;
+  font-size: $fs-body;
+  line-height: 1.6;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* typography */
+
+strong {
+  font-weight: $fw-bold;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.1;
+  margin: 0;
+}
+
+h1 {
+  font-size: $fs-h1;
+  font-weight: $fw-reg;
+}
+h2 {
+  font-size: $fs-h2;
+  font-weight: $fw-reg;
+}
+h3 {
+  font-size: $fs-h3;
+  font-weight: $fw-reg;
+}
+
+.section__title {
+  margin-bottom: 0.2em;
+}
+.section__title--intro {
+  font-weight: $fw-reg;
+}
+
+.section__title--intro strong {
+  display: block;
+}
+
+.section__subtitle {
+  margin: 0;
+  font-size: $fs-h3;
+}
+
+.section__subtitle--intro,
+.section__subtitle--about {
+  background: $clr-accent;
+  font-family: $ff-primary;
+}
+
+@media (min-width: 800px) {
+  h1 {
+    font-size: $m-fs-h1;
+  }
+  h2 {
+    font-size: $m-fs-h2;
+  }
+  h3 {
+    font-size: $m-fs-h3;
+  }
 }
