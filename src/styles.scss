@@ -4,8 +4,6 @@
   box-sizing: border-box;
 }
 
-/* custom properties */
-
 /* font faces */
 
 @font-face {
@@ -21,6 +19,8 @@
   font-weight: 300;
   font-style: normal;
 }
+
+/* custom variables */
 
 /* font family */
 $ff-primary: "SourceCodePro";
@@ -62,6 +62,10 @@ body {
   line-height: 1.6;
 }
 
+section {
+  padding: 5em 2em;
+}
+
 img {
   display: block;
   max-width: 100%;
@@ -76,7 +80,7 @@ strong {
 h1,
 h2,
 h3 {
-  line-height: 1.1;
+  line-height: 1;
   margin: 0;
 }
 
@@ -113,6 +117,13 @@ h3 {
 .section__subtitle--about {
   background: $clr-accent;
   font-family: $ff-primary;
+  margin-bottom: 1em;
+}
+
+/* intro section */
+
+.intro {
+  position: relative;
 }
 
 @media (min-width: 800px) {
@@ -125,4 +136,24 @@ h3 {
   h3 {
     font-size: $m-fs-h3;
   }
+
+  .grid-even-col {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.grid-even-col {
+  display: grid;
+  gap: 1rem;
+  max-width: 100%;
+  width: 70%;
+}
+
+.card {
+  display: grid;
+  align-content: start;
+  gap: 0.5rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background: $clr-accent;
 }
