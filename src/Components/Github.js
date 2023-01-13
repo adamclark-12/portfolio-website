@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 
-export const Github = () => {
+const Github = () => {
   const [repos, setRepos] = React.useState([]);
   React.useEffect(() => {
     const getRepos = async () => {
@@ -22,12 +22,12 @@ export const Github = () => {
     <section className="github" id="#github">
       <h1 className="section__title section__title--github">Github</h1>
       <p className="section__subtitle section__subtitle--github">
-        Here is some of my current work from github
+        Here is some of my repos of projects that I've been working on
       </p>
-      <h3>Current GitHub repos</h3>
-      <section class="grid-even-col">
+      <h3>https://github.com/adamclark-12</h3>
+      <section className="gitHub__grid--col">
         {repos.map((repo) => (
-          <div className="card" key={repo.id}>
+          <div className="github__Repo--Tile" key={repo.id}>
             <a href={repo.html}></a>
             <h3>{repo.name}</h3>
             <p>{repo.description}</p>
@@ -37,3 +37,4 @@ export const Github = () => {
     </section>
   );
 };
+export default Github;

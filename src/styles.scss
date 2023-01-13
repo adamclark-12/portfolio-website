@@ -48,13 +48,21 @@ $m-fs-h2: 3.75rem;
 $m-fs-h3: 1.5rem;
 $m-fs-body: 1.125rem;
 
+/* box shadows  */
+@mixin introImgBoxShadow($params...) {
+  -webkit-box-shadow: $params;
+  -moz-box-shadow: $params;
+  box-shadow: $params;
+}
+$boxShadow-introImg: 0.25em 0.25em 0.75em rgba(0, 0, 0, 0.25);
+// $boxShadow-introImg1: 0.125em 0.125 0.25em rgba(0, 0, 0, 0.15);
+
 /*  */
 
 /* general styles */
-
 body {
-  background-color: $clr-light;
-  color: $clr-dark;
+  background-color: $clr-dark;
+  color: $clr-light;
   margin: 0;
   font-family: $ff-primary;
   font-weight: $fw-reg;
@@ -63,7 +71,7 @@ body {
 }
 
 section {
-  padding: 5em 2em;
+  padding: 4.5em 2em;
 }
 
 img {
@@ -98,7 +106,7 @@ h3 {
 }
 
 .section__title {
-  margin-bottom: 0.2em;
+  margin-bottom: 0.25em;
 }
 .section__title--intro {
   font-weight: $fw-reg;
@@ -116,6 +124,7 @@ h3 {
 .section__subtitle--intro,
 .section__subtitle--about {
   background: $clr-accent;
+  padding: 0.25em 1em;
   font-family: $ff-primary;
   margin-bottom: 1em;
 }
@@ -126,6 +135,108 @@ h3 {
   position: relative;
 }
 
+.intro__img {
+  box-shadow: $boxShadow-introImg;
+}
+
+/*  tech stack    */
+.techStack {
+  color: $clr-dark;
+  background-color: $clr-light;
+  text-align: center;
+}
+.techStack__table {
+  display: grid;
+  width: min-content;
+  margin: 0 auto;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5em;
+}
+
+.section__title--techStack::after {
+  content: "";
+  display: block;
+  width: 3em;
+  height: 1px;
+  margin: 0.5em auto 1em;
+  background-color: $clr-dark;
+}
+.techStack__img {
+  min-width: 100px;
+}
+
+.section__subtitle--teachStack {
+  margin-bottom: 0.5em;
+}
+
+/*  github  */
+
+.github {
+  background-color: $clr-dark;
+  margin: 0 auto;
+  background-size: cover;
+  text-align: center;
+}
+
+.gitHub__grid--col {
+  display: grid;
+  gap: 1rem;
+  max-width: 100%;
+}
+
+.github__Repo--Tile {
+  display: grid;
+  align-content: start;
+  gap: 0.5rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background: $clr-accent;
+}
+
+.section__title--github::after {
+  content: "";
+  display: block;
+  width: 3em;
+  height: 1px;
+  margin: 0.5em auto 1em;
+  background-color: $clr-light;
+}
+
+/* Contact  */
+
+.contact {
+  background-color: $clr-light;
+  color: $clr-dark;
+}
+
+@media (min-width: 600px) {
+  .intro {
+    display: grid;
+    width: min-content;
+    margin: 0 auto;
+    grid-column-gap: 1em;
+    grid-template-areas:
+      "img title"
+      "img subtitle";
+    grid-template-columns: min-content max-content;
+
+    .intro__img {
+      grid-area: img;
+      min-width: 250px;
+      position: relative;
+      z-index: 2;
+    }
+  }
+  .section__subtitle--intro {
+    align-self: start;
+    grid-column: -1 / 1;
+    grid-row: 2;
+    text-align: right;
+    position: relative;
+    left: -1.5em;
+    width: calc(100% + 1.5em);
+  }
+}
 @media (min-width: 800px) {
   h1 {
     font-size: $m-fs-h1;
@@ -136,24 +247,7 @@ h3 {
   h3 {
     font-size: $m-fs-h3;
   }
-
   .grid-even-col {
     grid-template-columns: repeat(2, 1fr);
   }
-}
-
-.grid-even-col {
-  display: grid;
-  gap: 1rem;
-  max-width: 100%;
-  width: 70%;
-}
-
-.card {
-  display: grid;
-  align-content: start;
-  gap: 0.5rem;
-  padding: 1rem;
-  border-radius: 0.5rem;
-  background: $clr-accent;
 }
