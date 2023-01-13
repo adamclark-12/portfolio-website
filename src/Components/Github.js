@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-
+import { BsGithub } from "react-icons/bs";
 const Github = () => {
   const [repos, setRepos] = React.useState([]);
   React.useEffect(() => {
@@ -24,16 +24,21 @@ const Github = () => {
       <p className="section__subtitle section__subtitle--github">
         Here is some of my repos of projects that I've been working on
       </p>
-      <h3>https://github.com/adamclark-12</h3>
-      <section className="gitHub__grid--col">
+      <h3>
+        <a className="github--icon" href="https://github.com/adamclark-12">
+          <BsGithub />
+        </a>
+      </h3>
+      <div className="gitHub__grid--col">
         {repos.map((repo) => (
           <div className="github__Repo--Tile" key={repo.id}>
-            <a href={repo.html}></a>
-            <h3>{repo.name}</h3>
-            <p>{repo.description}</p>
+            <a href={repo.html_url}>
+              <h3>{repo.name}</h3>
+              <p>{repo.description}</p>
+            </a>
           </div>
         ))}
-      </section>
+      </div>
     </section>
   );
 };

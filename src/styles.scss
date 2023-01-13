@@ -33,6 +33,7 @@ $fw-bold: 900;
 $clr-light: whitesmoke;
 $clr-dark: #303030;
 $clr-accent: #09702b48;
+$clr-hoversAccent: #f7b023;
 
 /* font sizes */
 
@@ -49,6 +50,7 @@ $m-fs-h3: 1.5rem;
 $m-fs-body: 1.125rem;
 
 /* box shadows  */
+
 @mixin introImgBoxShadow($params...) {
   -webkit-box-shadow: $params;
   -moz-box-shadow: $params;
@@ -57,6 +59,16 @@ $m-fs-body: 1.125rem;
 $boxShadow-introImg: 0.25em 0.25em 0.75em rgba(0, 0, 0, 0.25);
 // $boxShadow-introImg1: 0.125em 0.125 0.25em rgba(0, 0, 0, 0.15);
 
+/* line break */
+
+@mixin lineBreak {
+  content: "";
+  display: block;
+  width: 4em;
+  height: 1px;
+  margin: 0.5em auto 1em;
+  background-color: $clr-hoversAccent;
+}
 /*  */
 
 /* general styles */
@@ -70,9 +82,27 @@ body {
   line-height: 1.6;
 }
 
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  color: inherit;
+  text-decoration: none;
+}
+
 section {
   padding: 4.5em 2em;
 }
+
+// section::before {
+//   content: "";
+//   display: block;
+//   width: 100%;
+//   height: 1.5px;
+//   margin: 0.5em auto 1em;
+//   background-color: $clr-hoversAccent;
+// }
 
 img {
   display: block;
@@ -154,12 +184,7 @@ h3 {
 }
 
 .section__title--techStack::after {
-  content: "";
-  display: block;
-  width: 3em;
-  height: 1px;
-  margin: 0.5em auto 1em;
-  background-color: $clr-dark;
+  @include lineBreak();
 }
 .techStack__img {
   min-width: 100px;
@@ -178,10 +203,20 @@ h3 {
   text-align: center;
 }
 
+.github--icon {
+  font-size: 2.5em;
+}
+.github--icon:hover {
+  color: $clr-hoversAccent;
+  transition: all;
+  transition-duration: 0.5s;
+}
+
 .gitHub__grid--col {
   display: grid;
   gap: 1rem;
   max-width: 100%;
+  padding: 1em;
 }
 
 .github__Repo--Tile {
@@ -190,16 +225,20 @@ h3 {
   gap: 0.5rem;
   padding: 1rem;
   border-radius: 0.5rem;
-  background: $clr-accent;
+  background: #354f52;
+}
+.github__Repo--Tile:hover {
+  border: 1px solid;
+  border-color: $clr-hoversAccent;
+  color: $clr-hoversAccent;
 }
 
 .section__title--github::after {
-  content: "";
-  display: block;
-  width: 3em;
-  height: 1px;
-  margin: 0.5em auto 1em;
-  background-color: $clr-light;
+  @include lineBreak();
+}
+
+.section__subtitle--github {
+  padding-bottom: 0.5em;
 }
 
 /* Contact  */
@@ -207,6 +246,10 @@ h3 {
 .contact {
   background-color: $clr-light;
   color: $clr-dark;
+  text-align: center;
+}
+.section__title--contact::after {
+  @include lineBreak();
 }
 
 @media (min-width: 600px) {
