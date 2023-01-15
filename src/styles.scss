@@ -32,7 +32,7 @@ $fw-bold: 900;
 /* colours */
 $clr-light: whitesmoke;
 $clr-dark: #303030;
-$clr-accent: #09702b48;
+$clr-accent: #354f52;
 $clr-hoversAccent: #f7b023;
 
 /* font sizes */
@@ -61,7 +61,7 @@ $boxShadow-introImg: 0.25em 0.25em 0.75em rgba(0, 0, 0, 0.25);
 
 /* line break */
 
-@mixin lineBreak {
+@mixin horizontalRule {
   content: "";
   display: block;
   width: 4em;
@@ -184,7 +184,7 @@ h3 {
 }
 
 .section__title--techStack::after {
-  @include lineBreak();
+  @include horizontalRule();
 }
 .techStack__img {
   min-width: 100px;
@@ -213,9 +213,10 @@ h3 {
 }
 
 .gitHub__grid--col {
+  margin: 0 auto;
   display: grid;
   gap: 1rem;
-  max-width: 100%;
+  max-width: 90%;
   padding: 1em;
 }
 
@@ -234,7 +235,7 @@ h3 {
 }
 
 .section__title--github::after {
-  @include lineBreak();
+  @include horizontalRule();
 }
 
 .section__subtitle--github {
@@ -249,7 +250,7 @@ h3 {
   text-align: center;
 }
 .section__title--contact::after {
-  @include lineBreak();
+  @include horizontalRule();
 }
 
 @media (min-width: 600px) {
