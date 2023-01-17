@@ -46,8 +46,8 @@ $fs-body: 1rem;
 
 $m-fs-h1: 4.5rem;
 $m-fs-h2: 3.75rem;
-$m-fs-h3: 1.5rem;
-$m-fs-body: 1.125rem;
+$m-fs-h3: 1.75rem;
+$m-fs-body: 1.3rem;
 
 /* box shadows  */
 
@@ -177,7 +177,7 @@ h3 {
 }
 .techStack__table {
   display: grid;
-  width: min-content;
+  width: max-content;
   margin: 0 auto;
   grid-template-columns: repeat(2, 1fr);
   gap: 0.5em;
@@ -187,11 +187,12 @@ h3 {
   @include horizontalRule();
 }
 .techStack__img {
-  min-width: 100px;
+  max-width: 120px;
 }
 
-.section__subtitle--teachStack {
+.section__subtitle--techStack {
   margin-bottom: 0.5em;
+  //font-size: 4rem;
 }
 
 /*  github  */
@@ -293,5 +294,12 @@ h3 {
   }
   .grid-even-col {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .techStack__img {
+    min-width: 170px;
+  }
+  .section__subtitle--techStack {
+    font-size: $m-fs-body;
   }
 }

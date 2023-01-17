@@ -8,7 +8,7 @@ const TechStack = () => {
       <h2 className="section__title section__title--techStack">
         Current Tech Stack
       </h2>
-      <p className="section__subtitle section__subtitle--teachStack">
+      <p className="section__subtitle section__subtitle--techStack">
         This is what I am currently using
       </p>
       <div className="techStack__table">
