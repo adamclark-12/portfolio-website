@@ -1,15 +1,15 @@
 import React from "react";
-import Nav from "./Components/Nav";
 import Home from "./Components/Home";
 import TechStack from "./Components/TechStack";
 import Github from "./Components/Github";
 import Contact from "./Components/Contact";
+import Header from "./Components/Header";
 
 import "./styles.scss";
 function App() {
   return (
     <div className="App">
-      <Nav />
+      <Header />
       <Home />
       <TechStack />
       <Github />
