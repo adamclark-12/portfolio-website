@@ -1,4 +1,4 @@
-import react, { useState } from "react";
+import { useState } from "react";
 
 const Header = () => {
   const [navToggled, setNavToggled] = useState(false);
@@ -6,7 +6,7 @@ const Header = () => {
   return (
     <header>
       <div className="logo">
-        <img src="./img/devAdam-01.png"></img>
+        <img src="./img/devAdam-01.png" alt="Adam Dev icon"></img>
       </div>
       <button
         className="nav-toggle"
@@ -17,16 +17,17 @@ const Header = () => {
         }}
       >
         <span
-          className={
-            navToggled ? "hamburger hamburger::after" : "hamburger ::before"
-          }
+          className={navToggled ? " hamburger hamburger::after" : "hamburger"}
+          //   className={
+          //     navToggled ? "hamburger ::before" : "hamburger hamburger::after"
+          //   }
         ></span>
       </button>
       <nav
         className={
           navToggled
-            ? "nav nav-open nav-toggle hamburger::after"
-            : " hamburger::before"
+            ? "hamburger::before"
+            : "nav nav-open nav-toggle  hamburger::before"
         }
       >
         {

@@ -150,6 +150,7 @@ header {
   max-width: 200px;
 }
 
+/*  nav bar  */
 .nav {
   position: fixed;
   background: $clr-light;
@@ -245,6 +246,8 @@ header {
 .hamburger::after {
   bottom: 6px;
 }
+
+/*  home section  */
 
 .section__title {
   margin-bottom: 0.25em;
